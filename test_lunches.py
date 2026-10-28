@@ -33,4 +33,4 @@ with sync_playwright() as p:
             record['error'] = str(exc)[:800]
         out['schools'][name] = record
 Path('lunch-diagnostics/report.json').write_text(json.dumps(out, indent=2), encoding='utf-8')
-print(json.dumps({k: v['status'] for k, v in out['schools'].items()}, indent=2))
+print(json.dumps(out, indent=2))
